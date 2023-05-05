@@ -4,7 +4,6 @@ namespace Domain.Extentions
 {
     public static class HighscoreExtention
     {
-        //TODO: Exceptions anzeigen lassen
         public static HighscoreModel Validate(this HighscoreModel item)
         {
             CheckUserName(item.Username);
@@ -59,7 +58,7 @@ namespace Domain.Extentions
 
         public static void CheckDate(DateTime date)
         {
-            if (date <= DateTime.Now)
+            if (date > DateTime.Now)
             {
                 throw new Exception("Date can't be in the future");
             }

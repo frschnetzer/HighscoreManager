@@ -1,10 +1,10 @@
 using Core;
 using DataAccess;
 using Domain;
+using System.Windows.Forms;
 
 namespace Forms
 {
-    //TODO: Combobox in Gametitle implementieren
     public partial class HighscoreManager : Form
     {
         private IHighscoreService<HighscoreModel> dataService = new CsvDataService();
@@ -12,6 +12,8 @@ namespace Forms
         public HighscoreManager()
         {
             InitializeComponent();
+            dateTimePicker.CustomFormat = "dd.MM.yyyy";
+            dateTimePicker.Format = DateTimePickerFormat.Custom;            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -23,6 +25,19 @@ namespace Forms
         {
             this.dataGridView.DataSource = null;
             this.dataGridView.DataSource = this.dataService.GetAll();
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var gametitle = row.Cells["Gametitle"].Value.ToString();
+
+                    if (!comboBox.Items.Contains(gametitle))
+                    {
+                        comboBox.Items.Add(gametitle);
+                    }
+                }
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -30,14 +45,25 @@ namespace Forms
             HighscoreModel model = new()
             {
                 Username = this.textBoxUserName.Text,
-                Gametitle = this.textBoxGametitle.Text,
+                Gametitle = this.comboBox.Text,
                 Highscore = this.textBoxHighscore.Text,
                 Date = this.dateTimePicker.Value,
-                Comment = this.textBoxUserName.Text
+                Comment = this.richTextBox.Text
             };
 
-            this.dataService.Save(model);
+            try
+            {
+                this.dataService.Save(model);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+            if (!comboBox.Items.Contains(this.comboBox.Text)) {
+                comboBox.Items.Add(this.comboBox.Text);
+            }
+            
             DataReload();
         }
     }

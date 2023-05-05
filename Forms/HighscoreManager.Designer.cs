@@ -34,13 +34,13 @@
             this.labelHighscore = new System.Windows.Forms.Label();
             this.labelComment = new System.Windows.Forms.Label();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
-            this.textBoxGametitle = new System.Windows.Forms.TextBox();
             this.textBoxHighscore = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,13 +97,6 @@
             this.textBoxUserName.Size = new System.Drawing.Size(155, 27);
             this.textBoxUserName.TabIndex = 5;
             // 
-            // textBoxGametitle
-            // 
-            this.textBoxGametitle.Location = new System.Drawing.Point(120, 134);
-            this.textBoxGametitle.Name = "textBoxGametitle";
-            this.textBoxGametitle.Size = new System.Drawing.Size(155, 27);
-            this.textBoxGametitle.TabIndex = 6;
-            // 
             // textBoxHighscore
             // 
             this.textBoxHighscore.Location = new System.Drawing.Point(120, 169);
@@ -111,13 +104,13 @@
             this.textBoxHighscore.Size = new System.Drawing.Size(155, 27);
             this.textBoxHighscore.TabIndex = 7;
             // 
-            // richTextBox1
+            // richTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(386, 95);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(380, 120);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.richTextBox.Location = new System.Drawing.Point(386, 95);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.Size = new System.Drawing.Size(380, 120);
+            this.richTextBox.TabIndex = 8;
+            this.richTextBox.Text = "";
             // 
             // dataGridView
             // 
@@ -150,23 +143,32 @@
             // 
             // dateTimePicker
             // 
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker.Location = new System.Drawing.Point(120, 205);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(155, 27);
             this.dateTimePicker.TabIndex = 12;
+            // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Location = new System.Drawing.Point(120, 131);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(155, 28);
+            this.comboBox.TabIndex = 13;
             // 
             // HighscoreManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 514);
+            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.textBoxHighscore);
-            this.Controls.Add(this.textBoxGametitle);
             this.Controls.Add(this.textBoxUserName);
             this.Controls.Add(this.labelComment);
             this.Controls.Add(this.labelHighscore);
@@ -190,12 +192,12 @@
         private Label labelHighscore;
         private Label labelComment;
         private TextBox textBoxUserName;
-        private TextBox textBoxGametitle;
         private TextBox textBoxHighscore;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBox;
         private DataGridView dataGridView;
         private Button buttonSave;
         private Label label1;
         private DateTimePicker dateTimePicker;
+        private ComboBox comboBox;
     }
 }

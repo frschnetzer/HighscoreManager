@@ -10,7 +10,9 @@ namespace DataAccess
         public static List<HighscoreModel> highscoreList = new();
 
         public override void Save(HighscoreModel item)
-        {            
+        {
+            base.Save(item);
+            
             highscoreList.Add(item);
 
             using (var writer = new StreamWriter(getFilePath()))
