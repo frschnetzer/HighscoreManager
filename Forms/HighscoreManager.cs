@@ -11,9 +11,7 @@ namespace Forms
 
         public HighscoreManager()
         {
-            InitializeComponent();
-            dateTimePicker.CustomFormat = "dd.MM.yyyy";
-            dateTimePicker.Format = DateTimePickerFormat.Custom;            
+            InitializeComponent();         
         }
 
         private void Form1_Load(object sender, EventArgs e)
