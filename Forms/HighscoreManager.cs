@@ -28,11 +28,18 @@ namespace Forms
             {
                 if (!row.IsNewRow)
                 {
+                    var username = row.Cells["Username"].Value.ToString();
+
+                    if (!comboBoxUsername.Items.Contains(username))
+                    {
+                        comboBoxUsername.Items.Add(username);
+                    }
+
                     var gametitle = row.Cells["Gametitle"].Value.ToString();
 
-                    if (!comboBox.Items.Contains(gametitle))
+                    if (!comboBoxGamtetitle.Items.Contains(gametitle))
                     {
-                        comboBox.Items.Add(gametitle);
+                        comboBoxGamtetitle.Items.Add(gametitle);
                     }
                 }
             }
@@ -42,8 +49,8 @@ namespace Forms
         {
             HighscoreModel model = new()
             {
-                Username = this.textBoxUserName.Text,
-                Gametitle = this.comboBox.Text,
+                Username = this.comboBoxUsername.Text,
+                Gametitle = this.comboBoxGamtetitle.Text,
                 Highscore = this.textBoxHighscore.Text,
                 Date = this.dateTimePicker.Value,
                 Comment = this.richTextBox.Text
@@ -58,8 +65,8 @@ namespace Forms
                 MessageBox.Show(ex.Message);
             }
 
-            if (!comboBox.Items.Contains(this.comboBox.Text)) {
-                comboBox.Items.Add(this.comboBox.Text);
+            if (!comboBoxGamtetitle.Items.Contains(this.comboBoxGamtetitle.Text)) {
+                comboBoxGamtetitle.Items.Add(this.comboBoxGamtetitle.Text);
             }
             
             DataReload();

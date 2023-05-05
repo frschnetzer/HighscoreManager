@@ -33,14 +33,14 @@
             this.labelGameTitle = new System.Windows.Forms.Label();
             this.labelHighscore = new System.Windows.Forms.Label();
             this.labelComment = new System.Windows.Forms.Label();
-            this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.textBoxHighscore = new System.Windows.Forms.TextBox();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.comboBoxGamtetitle = new System.Windows.Forms.ComboBox();
+            this.comboBoxUsername = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,13 +89,6 @@
             this.labelComment.Size = new System.Drawing.Size(77, 20);
             this.labelComment.TabIndex = 4;
             this.labelComment.Text = "Comment:";
-            // 
-            // textBoxUserName
-            // 
-            this.textBoxUserName.Location = new System.Drawing.Point(120, 95);
-            this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(155, 27);
-            this.textBoxUserName.TabIndex = 5;
             // 
             // textBoxHighscore
             // 
@@ -149,27 +142,35 @@
             this.dateTimePicker.Size = new System.Drawing.Size(155, 27);
             this.dateTimePicker.TabIndex = 12;
             // 
-            // comboBox
+            // comboBoxGamtetitle
             // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(120, 131);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(155, 28);
-            this.comboBox.TabIndex = 13;
+            this.comboBoxGamtetitle.FormattingEnabled = true;
+            this.comboBoxGamtetitle.Location = new System.Drawing.Point(120, 131);
+            this.comboBoxGamtetitle.Name = "comboBoxGamtetitle";
+            this.comboBoxGamtetitle.Size = new System.Drawing.Size(155, 28);
+            this.comboBoxGamtetitle.TabIndex = 13;
+            // 
+            // comboBoxUsername
+            // 
+            this.comboBoxUsername.FormattingEnabled = true;
+            this.comboBoxUsername.Location = new System.Drawing.Point(120, 95);
+            this.comboBoxUsername.Name = "comboBoxUsername";
+            this.comboBoxUsername.Size = new System.Drawing.Size(155, 28);
+            this.comboBoxUsername.TabIndex = 14;
             // 
             // HighscoreManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 514);
-            this.Controls.Add(this.comboBox);
+            this.Controls.Add(this.comboBoxUsername);
+            this.Controls.Add(this.comboBoxGamtetitle);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.textBoxHighscore);
-            this.Controls.Add(this.textBoxUserName);
             this.Controls.Add(this.labelComment);
             this.Controls.Add(this.labelHighscore);
             this.Controls.Add(this.labelGameTitle);
@@ -191,13 +192,13 @@
         private Label labelGameTitle;
         private Label labelHighscore;
         private Label labelComment;
-        private TextBox textBoxUserName;
         private TextBox textBoxHighscore;
         private RichTextBox richTextBox;
         private DataGridView dataGridView;
         private Button buttonSave;
         private Label label1;
         private DateTimePicker dateTimePicker;
-        private ComboBox comboBox;
+        private ComboBox comboBoxGamtetitle;
+        private ComboBox comboBoxUsername;
     }
 }
