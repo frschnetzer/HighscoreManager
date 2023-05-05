@@ -7,6 +7,7 @@ namespace Core
     {
         public virtual void Save(HighscoreModel item)
         {
+            // Calling extention methods to validate the values of the item
             item.Validate();
         }
 

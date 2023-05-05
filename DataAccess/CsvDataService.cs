@@ -11,15 +11,15 @@ namespace DataAccess
 
         public override void Save(HighscoreModel item)
         {
+            // validating
             base.Save(item);
             
             highscoreList.Add(item);
 
-            using (var writer = new StreamWriter(getFilePath()))
-            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-            {
-                csv.WriteRecords(highscoreList);
-            }
+            // writing to the csv file
+            using var writer = new StreamWriter(getFilePath());
+            using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
+            csv.WriteRecords(highscoreList);
         }
         public override List<HighscoreModel> GetAll()
         {

@@ -1,7 +1,6 @@
 using Core;
 using DataAccess;
 using Domain;
-using System.Windows.Forms;
 
 namespace Forms
 {
@@ -19,6 +18,9 @@ namespace Forms
             DataReload();
         }
 
+        /// <summary>
+        /// Refreshing the datagrid and readding the usernames and gametitles in the comboboxes.
+        /// </summary>
         private void DataReload()
         {
             this.dataGridView.DataSource = null;
@@ -44,9 +46,10 @@ namespace Forms
                 }
             }
         }
-
+              
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            // Creating a new model
             HighscoreModel model = new()
             {
                 Username = this.comboBoxUsername.Text,
@@ -65,10 +68,17 @@ namespace Forms
                 MessageBox.Show(ex.Message);
             }
 
+            // adding new username to the combobox
+            if (!comboBoxUsername.Items.Contains(this.comboBoxUsername.Text))
+            {
+                comboBoxUsername.Items.Add(this.comboBoxUsername.Text);
+            }
+
+            // adding new gametitle to the combobox
             if (!comboBoxGamtetitle.Items.Contains(this.comboBoxGamtetitle.Text)) {
                 comboBoxGamtetitle.Items.Add(this.comboBoxGamtetitle.Text);
             }
-            
+
             DataReload();
         }
     }

@@ -4,6 +4,11 @@ namespace Domain.Extentions
 {
     public static class HighscoreExtention
     {
+        /// <summary>
+        /// Validation method to check if every item in the model is correct and valid.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>return the item</returns>
         public static HighscoreModel Validate(this HighscoreModel item)
         {
             CheckUserName(item.Username);
@@ -15,6 +20,11 @@ namespace Domain.Extentions
             return item;
         }
 
+        /// <summary>
+        /// Checks username if not null, empty or has a length from 2 to 100 letters and only contains letters.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <exception cref="Exception"></exception>
         public static void CheckUserName(string username)
         {
             if (string.IsNullOrEmpty(username))
@@ -35,6 +45,11 @@ namespace Domain.Extentions
             }
         }
 
+        /// <summary>
+        /// Checks if the Gametitle is not null, empty or has a length of 2 to 100 letters.
+        /// </summary>
+        /// <param name="gametitle"></param>
+        /// <exception cref="Exception"></exception>
         public static void CheckGamtetitle(string gametitle)
         {
             if (string.IsNullOrEmpty(gametitle))
@@ -48,6 +63,11 @@ namespace Domain.Extentions
             }
         }
 
+        /// <summary>
+        /// Checks if Highscore is a number.
+        /// </summary>
+        /// <param name="highscore"></param>
+        /// <exception cref="Exception"></exception>
         public static void CheckHighscore(string highscore)
         {
             if (!int.TryParse(highscore, out _))
@@ -56,6 +76,11 @@ namespace Domain.Extentions
             }
         }
 
+        /// <summary>
+        /// Checks if Date is not in the future.
+        /// </summary>
+        /// <param name="date"></param>
+        /// <exception cref="Exception"></exception>
         public static void CheckDate(DateTime date)
         {
             if (date > DateTime.Now)
@@ -64,6 +89,11 @@ namespace Domain.Extentions
             }
         }
 
+        /// <summary>
+        /// Checks if comment is not null or empty.
+        /// </summary>
+        /// <param name="comment"></param>
+        /// <exception cref="Exception"></exception>
         public static void CheckComment(string comment)
         {
             if (string.IsNullOrEmpty(comment))
