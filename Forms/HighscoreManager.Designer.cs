@@ -95,14 +95,14 @@
             this.textBoxHighscore.Location = new System.Drawing.Point(120, 169);
             this.textBoxHighscore.Name = "textBoxHighscore";
             this.textBoxHighscore.Size = new System.Drawing.Size(155, 27);
-            this.textBoxHighscore.TabIndex = 7;
+            this.textBoxHighscore.TabIndex = 3;
             // 
             // richTextBox
             // 
             this.richTextBox.Location = new System.Drawing.Point(386, 95);
             this.richTextBox.Name = "richTextBox";
             this.richTextBox.Size = new System.Drawing.Size(380, 120);
-            this.richTextBox.TabIndex = 8;
+            this.richTextBox.TabIndex = 5;
             this.richTextBox.Text = "";
             // 
             // dataGridView
@@ -110,8 +110,10 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(36, 273);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 29;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(730, 229);
             this.dataGridView.TabIndex = 9;
             // 
@@ -120,7 +122,7 @@
             this.buttonSave.Location = new System.Drawing.Point(672, 221);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(94, 29);
-            this.buttonSave.TabIndex = 10;
+            this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -140,7 +142,7 @@
             this.dateTimePicker.Location = new System.Drawing.Point(120, 205);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(155, 27);
-            this.dateTimePicker.TabIndex = 12;
+            this.dateTimePicker.TabIndex = 4;
             // 
             // comboBoxGamtetitle
             // 
@@ -148,7 +150,7 @@
             this.comboBoxGamtetitle.Location = new System.Drawing.Point(120, 131);
             this.comboBoxGamtetitle.Name = "comboBoxGamtetitle";
             this.comboBoxGamtetitle.Size = new System.Drawing.Size(155, 28);
-            this.comboBoxGamtetitle.TabIndex = 13;
+            this.comboBoxGamtetitle.TabIndex = 2;
             // 
             // comboBoxUsername
             // 
@@ -156,7 +158,7 @@
             this.comboBoxUsername.Location = new System.Drawing.Point(120, 95);
             this.comboBoxUsername.Name = "comboBoxUsername";
             this.comboBoxUsername.Size = new System.Drawing.Size(155, 28);
-            this.comboBoxUsername.TabIndex = 14;
+            this.comboBoxUsername.TabIndex = 1;
             // 
             // HighscoreManager
             // 

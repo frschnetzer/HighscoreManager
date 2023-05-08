@@ -34,9 +34,11 @@ namespace DataAccess
 
         public string getFilePath()
         {
-            string fileName = "Highscores.txt";
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string filePath = Path.Combine(desktopPath, fileName);
+            // Get the csv from the Forms/bin/debug/.net6.0-windows/Highscores.txt
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string relativePath = Path.Combine("Highscores.txt");
+            string filePath = Path.Combine(currentDirectory, relativePath);
+
             return filePath;
         }
 

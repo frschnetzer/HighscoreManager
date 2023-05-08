@@ -75,7 +75,8 @@ namespace Forms
             }
 
             // adding new gametitle to the combobox
-            if (!comboBoxGamtetitle.Items.Contains(this.comboBoxGamtetitle.Text)) {
+            if (!comboBoxGamtetitle.Items.Contains(this.comboBoxGamtetitle.Text))
+            {
                 comboBoxGamtetitle.Items.Add(this.comboBoxGamtetitle.Text);
             }
 

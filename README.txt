@@ -6,3 +6,4 @@ Wenn das Programm neu gestartet wird, werden alle Daten die im Highscores.csv si
 Außerdem werden die bereits gespeicherten Spielnamen in einer Combobox dargstellt.
 
 Das Projekt wurde von dem Schüler: Schnetzer Franziska erstellt.
+GitHub Link: https://github.com/frschnetzer/HighscoreManager
