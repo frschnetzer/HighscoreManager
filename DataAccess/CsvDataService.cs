@@ -12,7 +12,7 @@ namespace DataAccess
 
         public override void Save(HighscoreModel item)
         {
-            // validating
+            // validating the entries
             base.Save(item);
             
             highscoreList.Add(item);
