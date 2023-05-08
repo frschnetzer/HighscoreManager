@@ -2,6 +2,7 @@
 using CsvHelper;
 using Domain;
 using System.Globalization;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DataAccess
 {
@@ -35,9 +36,17 @@ namespace DataAccess
         public string getFilePath()
         {
             // Get the csv from the Forms/bin/debug/.net6.0-windows/Highscores.txt
-            string currentDirectory = Directory.GetCurrentDirectory();
-            string relativePath = Path.Combine("Highscores.txt");
-            string filePath = Path.Combine(currentDirectory, relativePath);
+            string filePath = Path.Combine(AppContext.BaseDirectory, "Highscores.txt");
+
+
+            // If File does not exists, create a new one with the correct Headers
+            if (!File.Exists(filePath))
+            {
+                using(StreamWriter sw = new StreamWriter(filePath))
+                {
+                    sw.WriteLine("Username,Gametitle,Highscore,Date,Comment");
+                }
+            }
 
             return filePath;
         }
